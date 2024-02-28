@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lucdem.Avalonia.SourceGenerators", "Lucdem.Avalonia.SourceGenerators\Lucdem.Avalonia.SourceGenerators.csproj", "{BD2A3BD5-D0A5-4A18-BA21-28063050493A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lucdem.Avalonia.SourceGenerators.Sample", "Lucdem.Avalonia.SourceGenerators.Sample\Lucdem.Avalonia.SourceGenerators.Sample.csproj", "{1A5B608D-6DDE-4C34-8120-4DEE0405BE1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD2A3BD5-D0A5-4A18-BA21-28063050493A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD2A3BD5-D0A5-4A18-BA21-28063050493A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD2A3BD5-D0A5-4A18-BA21-28063050493A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD2A3BD5-D0A5-4A18-BA21-28063050493A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5B608D-6DDE-4C34-8120-4DEE0405BE1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5B608D-6DDE-4C34-8120-4DEE0405BE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5B608D-6DDE-4C34-8120-4DEE0405BE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5B608D-6DDE-4C34-8120-4DEE0405BE1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBAD39EA-601C-449D-B517-291334F44776}
+	EndGlobalSection
+EndGlobal
