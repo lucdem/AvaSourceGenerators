@@ -20,7 +20,7 @@ public partial class LabeledButton : TemplatedControl
 }
 ```
 
-The source generator will detect the attribute annotated field and create another partial declaration with the basic StyledProperty boilerplate:
+The source generator will detect the attribute annotated field and create another partial class declaration with the basic StyledProperty boilerplate:
 
 ```C#
 public static readonly StyledProperty<string> LabelTextProperty = AvaloniaProperty.Register<LabeledButton, string>("LabelText");
@@ -62,7 +62,7 @@ No Nuget at the moment. You'll have to clone the repo and add the project refere
 ```
 
 
-## How to inspect source generated code in VisualStudio
+## How to inspect generated source code in VisualStudio
 
 After applying the steps above, in the solution explorer, go to {YourProject}->Dependencies->Analyzers->Lucdem.Avalonia.SourceGenerators->{NameOfTheGenerator}. All generated files should show up there, but you might need to restart the IDE before it shows the generated files correctly.
 
@@ -72,4 +72,4 @@ After applying the steps above, in the solution explorer, go to {YourProject}->D
 * Add Diagnostics (warn user that the class should inherit from AvaloniaObject, that the annotated field must start with lower case character, etc)
 * Add generators for attached and direct properties
 * Maybe use field value as the default value for the property?
-* Add a way to mark a function as the validation function for a property (something like a [AvaPropValidator(nameof(PropertyName)] annotation maybe?)
+* Add a way to mark a function as the validation function for a property (something like a [AvaPropValidator(nameof(PropertyName))] annotation maybe?)
