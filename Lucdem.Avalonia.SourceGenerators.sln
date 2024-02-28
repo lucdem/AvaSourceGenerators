@@ -15,6 +15,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lucdem.Avalonia.SourceGener
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lucdem.Avalonia.SourceGenerators.Tests", "tests\Lucdem.Avalonia.SourceGenerators.Tests\Lucdem.Avalonia.SourceGenerators.Tests.csproj", "{960EAF1B-F66F-4F6D-8DDE-E91A3CC16269}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution files", "solution files", "{8B1477CE-C62D-4E55-8FD0-5B2919F6D622}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
