@@ -1,6 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
@@ -59,8 +60,22 @@ internal static class TypeSymbolExtension
     }
 }
 
-internal sealed record HierarchyInfo(string FilenameHint, string MetadataName, string Namespace, ImmutableArray<TypeInfo> Hierarchy)
+internal sealed class HierarchyInfo
+    : IEquatable<HierarchyInfo>
 {
+    public string FilenameHint { get; }
+    public string MetadataName { get; }
+    public string Namespace { get; }
+    public ImmutableArray<TypeInfo> Hierarchy { get; }
+
+    public HierarchyInfo(string filenameHint, string metadataName, string hierarchyNamespace, ImmutableArray<TypeInfo> hierarchy)
+    {
+        FilenameHint = filenameHint;
+        MetadataName = metadataName;
+        Namespace = hierarchyNamespace;
+        Hierarchy = hierarchy;
+    }
+
     /// <summary>
     /// Creates a new <see cref="HierarchyInfo"/> instance from a given <see cref="INamedTypeSymbol"/>.
     /// </summary>
@@ -170,6 +185,27 @@ internal sealed record HierarchyInfo(string FilenameHint, string MetadataName, s
             .AddMembers(typeDeclarationSyntax))
             .NormalizeWhitespace();
     }
+
+    public override int GetHashCode()
+    {
+        HashCode hash = new HashCode();
+        foreach(var typeInfo in Hierarchy)
+        {
+            hash.Add(typeInfo.GetHashCode());
+        }
+        return HashCode.Combine(FilenameHint.GetHashCode(), MetadataName.GetHashCode(), Namespace.GetHashCode(), hash.ToHashCode());
+    }
+
+    public bool Equals(HierarchyInfo? other)
+    {
+        return other is not null
+            && FilenameHint.Equals(other.FilenameHint)
+            && MetadataName.Equals(other.MetadataName)
+            && Namespace.Equals(other.Namespace)
+            && Hierarchy.AsSpan().SequenceEqual(other.Hierarchy.AsSpan());
+    }
+
+    public override bool Equals(Object obj) => Equals(obj as HierarchyInfo);
 }
 
 /// <summary>

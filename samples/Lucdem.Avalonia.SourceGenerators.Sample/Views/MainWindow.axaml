@@ -18,7 +18,16 @@
 
 	<StackPanel VerticalAlignment="Center" MaxWidth="500" Spacing="20">
 		<TextBox Name="TBox" Text="{Binding BindedText}" TextAlignment="Center"/>
-		<controls:LabeledButton LabelText="{Binding BindedText}" HorizontalAlignment="Center"/>
+		<controls:LabeledButton 
+			LabelText="{Binding BindedText}" 
+			LabelMargin="{Binding ButtonLabelMargin}"
+			HorizontalAlignment="Center"/>
+		<Grid ColumnDefinitions="Auto,*">
+			<Label Content="Change button label margin:"
+				   VerticalAlignment="Center"
+				   Margin="5"/>
+			<Slider Grid.Column="1" Value="{Binding ButtonLabelMarginSize}" Minimum="0" Maximum="50"/>
+		</Grid>
 	</StackPanel>
 
 </Window>

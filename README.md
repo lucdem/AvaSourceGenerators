@@ -53,19 +53,11 @@ namespace Lucdem.Avalonia.SourceGenerators.Sample.Controls
 
 ## How to use
 
-The project is available as a nuget package under the name of AvaSourceGenerators. To use it simply add to the csproj file:
-
-```XML
-  <ItemGroup>
-    <PackageReference Include="AvaSourceGenerators" Version="0.1.0.11"/>
-  </ItemGroup>
-```
-
+The project is available as a [nuget package](https://www.nuget.org/packages/AvaSourceGenerators/).
 
 ## How to inspect generated source code in VisualStudio
 
-After including the project, in the solution explorer, go to {YourProject}->Dependencies->Analyzers->Lucdem.Avalonia.SourceGenerators->{NameOfTheGenerator}.
-
+After including the package, in the solution explorer, go to {YourProject}->Dependencies->Analyzers->Lucdem.Avalonia.SourceGenerators->{NameOfTheGenerator}.
 
 ## TODO list
 

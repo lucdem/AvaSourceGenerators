@@ -1,20 +1,21 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:Lucdem.Avalonia.SourceGenerators.Sample.Controls">
-  <Design.PreviewWith>
-	  <Border Background="Gray" BorderBrush="Red">
-		  <controls:LabeledButton LabelText="Placeholder"/>
-	  </Border>
-  </Design.PreviewWith>
+	<Design.PreviewWith>
+		<Border Background="Gray" BorderBrush="Red" BorderThickness="2">
+			<controls:LabeledButton LabelText="Placeholder" LabelMargin="20"/>
+		</Border>
+	</Design.PreviewWith>
 
-  <Style Selector="controls|LabeledButton">
-    <!-- Set Defaults -->
-    <Setter Property="Template">
-      <ControlTemplate>
-		  <Button>
-			  <Label Content="{TemplateBinding LabelText}"/>
-		  </Button>
-      </ControlTemplate>
-    </Setter>
-  </Style>
+	<Style Selector="controls|LabeledButton">
+		<!-- Set Defaults -->
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Button>
+					<Label Content="{TemplateBinding LabelText}"
+						   Margin="{TemplateBinding LabelMargin}"/>
+				</Button>
+			</ControlTemplate>
+		</Setter>
+	</Style>
 </Styles>
