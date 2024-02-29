@@ -3,7 +3,6 @@
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
 
 		<IsPackable>false</IsPackable>
 		<IsTestProject>true</IsTestProject>
@@ -25,6 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\src\Lucdem.Avalonia.SourceGenerators.Attributes\Lucdem.Avalonia.SourceGenerators.Attributes.csproj" />
 		<ProjectReference Include="..\..\src\Lucdem.Avalonia.SourceGenerators\Lucdem.Avalonia.SourceGenerators.csproj" />
 	</ItemGroup>
 

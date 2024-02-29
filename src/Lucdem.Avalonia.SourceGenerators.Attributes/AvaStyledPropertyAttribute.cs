@@ -2,6 +2,5 @@
 
 namespace Lucdem.Avalonia.SourceGenerators.Attributes;
 
-public class AvaStyledPropertyAttribute : Attribute
-{
-}
+public class AvaStyledPropertyAttribute : Attribute 
+{}

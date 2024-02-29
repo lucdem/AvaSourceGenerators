@@ -1,0 +1,11 @@
+<Project>
+	<PropertyGroup>		
+		<PackageProjectUrl>https://github.com/lucdem/AvaSourceGenerators</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/lucdem/AvaSourceGenerators</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageTags>avalonia;avaloniaui;net;netstandard;mvvm</PackageTags>
+		<RepositoryType>git</RepositoryType>
+		<IsPackable>true</IsPackable>
+		<PackageDescription>Source generators for AvaloniaUI boilerplate code</PackageDescription>
+	</PropertyGroup>
+</Project>

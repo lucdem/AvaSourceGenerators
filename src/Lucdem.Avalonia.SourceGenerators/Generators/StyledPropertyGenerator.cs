@@ -1,6 +1,5 @@
 ﻿using Lucdem.Avalonia.SourceGenerators.Extensions;
 using Lucdem.Avalonia.SourceGenerators.Models;
-using Lucdem.Avalonia.SourceGenerators.Attributes;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ namespace Lucdem.Avalonia.SourceGenerators.Generators;
 [Generator]
 internal class StyledPropertyGenerator : IIncrementalGenerator
 {
-    private static readonly string _attrName = typeof(AvaStyledPropertyAttribute).UnderlyingSystemType.FullName;
+    private const string _attrName = "Lucdem.Avalonia.SourceGenerators.Attributes.AvaStyledPropertyAttribute";
 
     record StyledPropertyInfo(
         HierarchyInfo HierarchyInfo,

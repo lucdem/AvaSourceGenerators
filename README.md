@@ -53,18 +53,18 @@ namespace Lucdem.Avalonia.SourceGenerators.Sample.Controls
 
 ## How to use
 
-No Nuget at the moment. You'll have to clone the repo and add the project reference manually in your .csproj file. After adding the project reference you also need to include OutputItemType="Analyzer" in the ProjectReference tag, like it is done in the sample project:
+The project is available as a nuget package under the name of AvaSourceGenerators. To use it simply add to the csproj file:
 
 ```XML
   <ItemGroup>
-    <ProjectReference Include="..\Lucdem.Avalonia.SourceGenerator\Lucdem.Avalonia.SourceGenerators.csproj" OutputItemType="Analyzer" />
+    <PackageReference Include="AvaSourceGenerators" Version="0.1.0.11"/>
   </ItemGroup>
 ```
 
 
 ## How to inspect generated source code in VisualStudio
 
-After applying the steps above, in the solution explorer, go to {YourProject}->Dependencies->Analyzers->Lucdem.Avalonia.SourceGenerators->{NameOfTheGenerator}. All generated files should show up there, but you might need to restart the IDE before it shows the generated files correctly.
+After including the project, in the solution explorer, go to {YourProject}->Dependencies->Analyzers->Lucdem.Avalonia.SourceGenerators->{NameOfTheGenerator}.
 
 
 ## TODO list

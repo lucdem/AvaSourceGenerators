@@ -2,17 +2,15 @@
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net8.0</TargetFramework>
-		<Nullable>enable</Nullable>
 		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+		<IsPackable>false</IsPackable>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="Models\" />
 		<AvaloniaResource Include="Assets\**" />
 	</ItemGroup>
-
 
 	<ItemGroup>
 		<PackageReference Include="Avalonia" Version="11.0.9" />
@@ -22,10 +20,6 @@
 		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
 		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.9" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-	</ItemGroup>
-
-
-	<ItemGroup>
-		<ProjectReference Include="..\..\src\Lucdem.Avalonia.SourceGenerators\Lucdem.Avalonia.SourceGenerators.csproj" OutputItemType="Analyzer" />
+		<PackageReference Include="AvaSourceGenerators" Version="[0.1.0.11]"/>
 	</ItemGroup>
 </Project>

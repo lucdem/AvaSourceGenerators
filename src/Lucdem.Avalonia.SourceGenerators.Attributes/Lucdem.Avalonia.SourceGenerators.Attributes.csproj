@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="../Package.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<PackageId>AvaSourceGenerators</PackageId>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup Label="Package">
+		<None Include="$(SolutionDir)README.md" Pack="true" PackagePath=""/>
+		<None Include="..\Lucdem.Avalonia.SourceGenerators\bin\$(Configuration)\netstandard2.0\Lucdem.Avalonia.SourceGenerators.dll"
+			  PackagePath="analyzers\dotnet\cs"
+			  Pack="true"
+			  Visible="false" />		
+	</ItemGroup>
+</Project>

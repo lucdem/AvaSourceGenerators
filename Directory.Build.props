@@ -1,14 +1,10 @@
 <Project>
-    <PropertyGroup>		
+	<PropertyGroup>
 		<Product>AvaSourceGenerators</Product>
-		<Version>0.1.0.0</Version>
-		<AssemblyVersion>0.1.0.0</AssemblyVersion>
+		<Version>0.1.0.11</Version>
+		<AssemblyVersion>0.1.0.11</AssemblyVersion>
 		<Authors>Lucas Antonio Demeneck</Authors>
-		<PackageProjectUrl>https://github.com/lucdem/AvaSourceGenerators</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/lucdem/AvaSourceGenerators</RepositoryUrl>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageDescription>Source generators for AvaloniaUI boilerplate code</PackageDescription>
-		<PackageTags>avalonia;avaloniaui;net;netstandard;mvvm</PackageTags>
-		<RepositoryType>git</RepositoryType>
-    </PropertyGroup>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 </Project>

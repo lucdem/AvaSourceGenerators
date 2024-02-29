@@ -165,7 +165,7 @@ public class StyledPropertyGeneratorTests
 
     private static void VerifyGenerateSources(string source, IIncrementalGenerator[] generators, LanguageVersion languageVersion, params (string Filename, string? Text)[] results)
     {
-        // Ensure CommunityToolkit.Mvvm and System.ComponentModel.DataAnnotations are loaded
+        // Ensure it is loaded
         Type observableObjectType = typeof(AvaStyledPropertyAttribute);
 
         // Get all assembly references for the loaded assemblies (easy way to pull in all necessary dependencies)
