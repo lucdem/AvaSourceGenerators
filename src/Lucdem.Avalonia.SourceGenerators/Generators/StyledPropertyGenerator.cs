@@ -2,6 +2,7 @@
 using Lucdem.Avalonia.SourceGenerators.Models;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -82,7 +83,12 @@ internal class StyledPropertyGenerator : IIncrementalGenerator
     /// <returns> The generated CLR accessor name for the styled property </returns>
     private static string GetGeneratedClrAccessorName(IFieldSymbol fieldSymbol)
     {
-        var chars = fieldSymbol.Name.ToCharArray();
+        var span = fieldSymbol.Name.AsSpan();
+        if (fieldSymbol.Name.StartsWith("_"))
+        {
+            span = span.Slice(1);
+        }
+        var chars = span.ToArray();
         chars[0] = char.ToUpperInvariant(chars[0]);
         return new string(chars);
     }
