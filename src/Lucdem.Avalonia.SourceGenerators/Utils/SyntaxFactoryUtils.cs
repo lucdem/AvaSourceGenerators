@@ -13,7 +13,7 @@ internal static class SyntaxFactoryUtils
         var generatorNameArg = AttributeArgument(
             LiteralExpression(
                 SyntaxKind.StringLiteralExpression,
-                Literal(generatorType.FullName)));
+                Literal(generatorType.FullName!)));
         var generatorVersionArg = AttributeArgument(
             LiteralExpression(
                 SyntaxKind.StringLiteralExpression,
@@ -28,5 +28,17 @@ internal static class SyntaxFactoryUtils
     {
         var attribute = Attribute(IdentifierName("global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage"));
         return SingletonSeparatedList(attribute);
+    }
+    
+    /// <summary>
+    /// Create the declaration for a basic getter returning a backing field (get => backingField;)
+    /// </summary>
+    /// <param name="backingFieldName">The name of the backing field</param>
+    /// <returns>The getter declaration</returns>
+    internal static AccessorDeclarationSyntax BasicGetterDeclaration(string backingFieldName)
+    {
+        return AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
+            .WithExpressionBody(ArrowExpressionClause(IdentifierName(backingFieldName)))
+            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
     }
 }
