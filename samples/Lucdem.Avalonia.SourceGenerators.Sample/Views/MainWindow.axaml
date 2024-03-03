@@ -1,7 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:Lucdem.Avalonia.SourceGenerators.Sample.ViewModels"
-		xmlns:controls="using:Lucdem.Avalonia.SourceGenerators.Sample.Controls"
+        xmlns:controls="using:Lucdem.Avalonia.SourceGenerators.Sample.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
@@ -10,24 +10,44 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="Lucdem.Avalonia.SourceGenerators.Sample">
 
-	<Design.DataContext>
+    <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
-	<StackPanel VerticalAlignment="Center" MaxWidth="500" Spacing="20">
-		<TextBox Name="TBox" Text="{Binding BindedText}" TextAlignment="Center"/>
-		<controls:LabeledButton 
-			LabelText="{Binding BindedText}" 
-			LabelMargin="{Binding ButtonLabelMargin}"
-			HorizontalAlignment="Center"/>
-		<Grid ColumnDefinitions="Auto,*">
-			<Label Content="Change button label margin:"
-				   VerticalAlignment="Center"
-				   Margin="5"/>
-			<Slider Grid.Column="1" Value="{Binding ButtonLabelMarginSize}" Minimum="0" Maximum="50"/>
-		</Grid>
-	</StackPanel>
+    <StackPanel VerticalAlignment="Center" MaxWidth="500" Spacing="20">
+        <TextBox Name="TBox" Text="{Binding BindedText}" TextAlignment="Center" />
+        <controls:LabeledButton
+            LabelText="{Binding BindedText}"
+            LabelMargin="{Binding ButtonLabelMargin}"
+            HorizontalAlignment="Center" />
+        <Grid ColumnDefinitions="Auto,*">
+            <Label
+                Grid.Column="0"
+                Content="Change button label margin:"
+                VerticalAlignment="Center"
+                Margin="5" />
+            <controls:SliderWithValueBox
+                Grid.Column="1"
+                Min="0"
+                Max="50"
+                Value="{Binding ButtonLabelMarginSize, Mode=TwoWay}"/>
+            <!-- <Grid Grid.Column="1"  -->
+            <!--       ColumnDefinitions="*, Auto"  -->
+            <!--       MinWidth="100"> -->
+            <!--     <Slider -->
+            <!--         Minimum="0"  -->
+            <!--         Maximum="50" -->
+            <!--         Value="25"/> -->
+            <!--     <TextBox  -->
+            <!--         Grid.Column="1" -->
+            <!--         TextAlignment="Center" -->
+            <!--         VerticalContentAlignment="Center" -->
+            <!--         BorderThickness="0" -->
+            <!--         Text="aaaaa"/> -->
+            <!-- </Grid> -->
+        </Grid>
+    </StackPanel>
 
 </Window>

@@ -1,0 +1,28 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Lucdem.Avalonia.SourceGenerators.Sample.Controls"
+        xmlns:converters="using:Lucdem.Avalonia.SourceGenerators.Sample.Converters">
+    <Design.PreviewWith>
+        <controls:SliderWithValueBox/>
+    </Design.PreviewWith>
+
+    <Style Selector="controls|SliderWithValueBox">
+        <!-- Set Defaults -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="*, Auto">
+                    <Slider
+                        Minimum="{TemplateBinding Min}"
+                        Maximum="{TemplateBinding Max}"
+                        Value="{TemplateBinding Value, Mode=TwoWay}"/>
+                    <TextBox
+                        Grid.Column="1"
+                        TextAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="0"
+                        Text="{TemplateBinding Value, Converter={x:Static converters:ToStringConverters.DoubleConverter}}"/>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>
